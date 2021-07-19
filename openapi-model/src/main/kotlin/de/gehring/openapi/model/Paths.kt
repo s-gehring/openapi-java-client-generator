@@ -15,5 +15,4 @@ package de.gehring.openapi.model
  * In case of ambiguous matching, it's up to the tooling to decide which one to use.
  *
  */
-class Paths : HashMap<String, PathItem>() {
-}
+class Paths : HashMap<String, PathItem>()

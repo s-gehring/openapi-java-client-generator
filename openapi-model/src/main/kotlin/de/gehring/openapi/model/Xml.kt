@@ -13,9 +13,9 @@ package de.gehring.openapi.model
  * @param wrapped  MAY be used only for an array definition. Signifies whether the array is wrapped (for example, <books><book/><book/></books>) or unwrapped (<book/><book/>). Default value is false. The definition takes effect only when defined alongside type being array (outside the items).
  */
 data class Xml(
-    val name: String,
-    val namespace: String,
-    val prefix: String,
-    val attribute: Boolean,
-    val wrapped: Boolean,
+    val name: String? = null,
+    val namespace: String? = null,
+    val prefix: String? = null,
+    val attribute: Boolean? = null,
+    val wrapped: Boolean? = null,
 )

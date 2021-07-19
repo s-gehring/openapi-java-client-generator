@@ -18,6 +18,4 @@ package de.gehring.openapi.model
  *
  * @param default The documentation of responses other than the ones declared for specific HTTP response codes. Use this field to cover undeclared responses. A Reference Object can link to a response that the OpenAPI Object's components/responses section defines.
  */
-class Responses(val default: ReferenceOr<Response>) : HashMap<HttpStatusCode, ReferenceOr<Response>>() {
-
-}
+class Responses(val default: ReferenceOr<Response>? = null) : HashMap<HttpStatusCode, ReferenceOr<Response>>()

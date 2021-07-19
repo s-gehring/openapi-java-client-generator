@@ -16,13 +16,13 @@ package de.gehring.openapi.model
  * @param callbacks  An object to hold reusable Callback Objects.
  */
 data class Components(
-    val schemas: Map<String, ReferenceOr<Schema>>,
-    val responses: Map<String, ReferenceOr<Response>>,
-    val parameters: Map<String, ReferenceOr<Parameter>>,
-    val examples: Map<String, ReferenceOr<Example>>,
-    val requestBodies: Map<String, ReferenceOr<RequestBody>>,
-    val headers: Map<String, ReferenceOr<Header>>,
-    val securitySchemes: Map<String, ReferenceOr<SecurityScheme>>,
-    val links: Map<String, ReferenceOr<Link>>,
-    val callbacks: Map<String, ReferenceOr<Callback>>,
+    val schemas: Map<String, ReferenceOr<Schema>>? = null,
+    val responses: Map<String, ReferenceOr<Response>>? = null,
+    val parameters: Map<String, ReferenceOr<Parameter>>? = null,
+    val examples: Map<String, ReferenceOr<Example>>? = null,
+    val requestBodies: Map<String, ReferenceOr<RequestBody>>? = null,
+    val headers: Map<String, ReferenceOr<Header>>? = null,
+    val securitySchemes: Map<String, ReferenceOr<SecurityScheme>>? = null,
+    val links: Map<String, ReferenceOr<Link>>? = null,
+    val callbacks: Map<String, ReferenceOr<Callback>>? = null,
 )

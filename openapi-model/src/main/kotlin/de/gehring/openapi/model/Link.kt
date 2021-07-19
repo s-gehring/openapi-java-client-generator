@@ -23,10 +23,10 @@ package de.gehring.openapi.model
  * @param server  A server object to be used by the target operation.
  */
 data class Link(
-    val operationRef: String,
-    val operationId: String,
-    val parameters: Map<String, Any>,
-    val requestBody: Any,
-    val description: String,
-    val server: Server,
+    val operationRef: String? = null,
+    val operationId: String? = null,
+    val parameters: Map<String, Any>? = null,
+    val requestBody: Any? = null,
+    val description: String? = null,
+    val server: Server? = null,
 )

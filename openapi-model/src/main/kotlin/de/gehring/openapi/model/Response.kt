@@ -10,7 +10,7 @@ package de.gehring.openapi.model
 */*/
 data class Response(
     val description: String,
-    val headers: Map<String, ReferenceOr<Header>>,
-    val content: Map<String, MediaType>,
-    val links: Map<String, ReferenceOr<Link>>
+    val headers: Map<String, ReferenceOr<Header>>? = null,
+    val content: Map<String, MediaType>? = null,
+    val links: Map<String, ReferenceOr<Link>>? = null
 )

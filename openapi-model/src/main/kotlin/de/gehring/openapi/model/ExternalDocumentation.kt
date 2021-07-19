@@ -7,6 +7,6 @@ package de.gehring.openapi.model
  * @param url  REQUIRED. The URL for the target documentation. Value MUST be in the format of a URL.
  */
 data class ExternalDocumentation(
-    val description: String,
+    val description: String? = null,
     val url: String
 )

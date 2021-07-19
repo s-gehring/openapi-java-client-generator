@@ -17,10 +17,10 @@ import java.nio.file.Paths
 data class OpenApi(
     val openapi: String,
     val info: Info,
-    val servers: List<Server>?,
+    val servers: List<Server>? = null,
     val paths: Paths,
-    val components: Components?,
-    val security: List<SecurityRequirement>?,
-    val tags: List<Tag>?,
-    val externalDocs: ExternalDocumentation?
+    val components: Components? = null,
+    val security: List<SecurityRequirement>? = null,
+    val tags: List<Tag>? = null,
+    val externalDocs: ExternalDocumentation? = null
 )

@@ -10,9 +10,9 @@ package de.gehring.openapi.model
  * @param allowReserved  Determines whether the parameter value SHOULD allow reserved characters, as defined by RFC3986 :/?#[]@!$&'()*+,;= to be included without percent-encoding. The default value is false. This property SHALL be ignored if the request body media type is not application/x-www-form-urlencoded.
 */*/
 data class Encoding(
-    val contentType: String,
-    val headers: Map<String, ReferenceOr<Header>>,
-    val style: String,
-    val explode: Boolean,
-    val allowReserved: Boolean,
+    val contentType: String? = null,
+    val headers: Map<String, ReferenceOr<Header>>? = null,
+    val style: String? = null,
+    val explode: Boolean? = null,
+    val allowReserved: Boolean? = null,
 )

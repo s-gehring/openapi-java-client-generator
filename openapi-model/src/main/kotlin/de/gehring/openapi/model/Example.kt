@@ -10,8 +10,8 @@ package de.gehring.openapi.model
  * @param externalValue  A URL that points to the literal example. This provides the capability to reference examples that cannot easily be included in JSON or YAML documents. The value field and externalValue field are mutually exclusive.
  */
 data class Example(
-    val summary: String,
-    val description: String,
-    val value: Any,
-    val externalValue: String,
+    val summary: String? = null,
+    val description: String? = null,
+    val value: Any? = null,
+    val externalValue: String? = null,
 )

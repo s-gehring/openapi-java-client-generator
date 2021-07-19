@@ -8,7 +8,7 @@ package de.gehring.openapi.model
  * @param email  The email address of the contact person/organization. MUST be in the format of an email address.
  */
 data class Contact(
-    val name: String?,
-    val url: String?,
-    val email: String?
+    val name: String? = null,
+    val url: String? = null,
+    val email: String? = null
 )

@@ -10,8 +10,8 @@ package de.gehring.openapi.model
  * @param encoding  A map between a property name and its encoding information. The key, being the property name, MUST exist in the schema as a property. The encoding object SHALL only apply to requestBody objects when the media type is multipart or application/x-www-form-urlencoded.
  */
 data class MediaType(
-    val schema: ReferenceOr<Schema>,
-    val example: Any,
-    val examples: Map<String, ReferenceOr<Example>>,
-    val encoding: Map<String, Encoding>
+    val schema: ReferenceOr<Schema>? = null,
+    val example: Any? = null,
+    val examples: Map<String, ReferenceOr<Example>>? = null,
+    val encoding: Map<String, Encoding>? = null
 )

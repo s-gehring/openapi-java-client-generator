@@ -14,9 +14,9 @@ package de.gehring.openapi.model
  */
 data class Info(
     val title: String,
-    val description: String?,
-    val termsOfService: String?,
-    val contact: Contact?,
-    val license: License?,
+    val description: String? = null,
+    val termsOfService: String? = null,
+    val contact: Contact? = null,
+    val license: License? = null,
     val version: String
 )

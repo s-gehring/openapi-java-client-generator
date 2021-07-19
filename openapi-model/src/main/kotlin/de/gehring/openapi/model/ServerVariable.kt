@@ -8,7 +8,7 @@ package de.gehring.openapi.model
  * @param description  An optional description for the server variable. CommonMark syntax MAY be used for rich text representation.
  */
 data class ServerVariable(
-    val enum: List<String>?,
+    val enum: List<String>? = null,
     val default: String,
-    val description: String?,
+    val description: String? = null,
 )

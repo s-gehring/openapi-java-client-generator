@@ -12,5 +12,5 @@ package de.gehring.openapi.model
  */
 data class Discriminator(
     val propertyName: String,
-    val mapping: Map<String, String>
+    val mapping: Map<String, String>? = null
 )

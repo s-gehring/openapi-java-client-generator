@@ -11,6 +11,6 @@ package de.gehring.openapi.model
 data class OAuthFlow(
     val authorizationUrl: String,
     val tokenUrl: String,
-    val refreshUrl: String,
+    val refreshUrl: String? = null,
     val scopes: Map<String, String>,
 )

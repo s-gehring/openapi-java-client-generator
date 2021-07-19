@@ -9,6 +9,6 @@ package de.gehring.openapi.model
  */
 data class Server(
     val url: String,
-    val description: String?,
-    val variables: Map<String, ServerVariable>?
+    val description: String? = null,
+    val variables: Map<String, ServerVariable>? = null
 )

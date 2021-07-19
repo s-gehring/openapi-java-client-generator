@@ -9,8 +9,8 @@ package de.gehring.openapi.model
  * @param authorizationCode  Configuration for the OAuth Authorization Code flow. Previously called accessCode in OpenAPI 2.0.
  */
 data class OAuthFlows(
-    val implicit: OAuthFlow,
-    val password: OAuthFlow,
-    val clientCredentials: OAuthFlow,
-    val authorizationCode: OAuthFlow,
+    val implicit: OAuthFlow? = null,
+    val password: OAuthFlow? = null,
+    val clientCredentials: OAuthFlow? = null,
+    val authorizationCode: OAuthFlow? = null,
 )

@@ -8,7 +8,7 @@ package de.gehring.openapi.model
  * @param required  Determines if the request body is required in the request. Defaults to false.
  */
 data class RequestBody(
-    val description: String,
+    val description: String? = null,
     val content: Map<String, MediaType>,
-    val required: Boolean,
+    val required: Boolean? = null,
 )

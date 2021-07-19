@@ -18,16 +18,16 @@ package de.gehring.openapi.model
  *
  */
 data class Operation(
-    val tags: List<String>,
-    val summary: String,
-    val description: String,
-    val externalDocs: ExternalDocumentation,
-    val operationId: String,
-    val parameters: ReferenceOr<Parameter>,
-    val requestBody: ReferenceOr<RequestBody>,
+    val tags: List<String>? = null,
+    val summary: String? = null,
+    val description: String? = null,
+    val externalDocs: ExternalDocumentation? = null,
+    val operationId: String? = null,
+    val parameters: ReferenceOr<Parameter>? = null,
+    val requestBody: ReferenceOr<RequestBody>? = null,
     val responses: Responses,
-    val callbacks: Map<String, ReferenceOr<Callback>>,
-    val deprecated: Boolean,
-    val security: List<SecurityRequirement>,
-    val servers: List<Server>
+    val callbacks: Map<String, ReferenceOr<Callback>>? = null,
+    val deprecated: Boolean? = null,
+    val security: List<SecurityRequirement>? = null,
+    val servers: List<Server>? = null
 )

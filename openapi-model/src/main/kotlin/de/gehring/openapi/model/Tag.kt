@@ -10,6 +10,6 @@ package de.gehring.openapi.model
  */
 data class Tag(
     val name: String,
-    val description: String,
-    val externalDocs: ExternalDocumentation,
+    val description: String? = null,
+    val externalDocs: ExternalDocumentation? = null,
 )

@@ -37,15 +37,15 @@ data class Parameter(
      */
     val name: String,
     val _in: String,
-    val description: String,
-    val required: Boolean,
-    val deprecated: Boolean,
-    val allowEmptyValue: Boolean,
-    val style: String,
-    val explode: Boolean,
-    val allowReserved: Boolean,
-    val schema: ReferenceOr<Schema>,
-    val example: Any,
-    val examples: Map<String, ReferenceOr<Example>>,
-    val content: Map<String, MediaType>
+    val description: String? = null,
+    val required: Boolean? = null,
+    val deprecated: Boolean? = null,
+    val allowEmptyValue: Boolean? = null,
+    val style: String? = null,
+    val explode: Boolean? = null,
+    val allowReserved: Boolean? = null,
+    val schema: ReferenceOr<Schema>? = null,
+    val example: Any? = null,
+    val examples: Map<String, ReferenceOr<Example>>? = null,
+    val content: Map<String, MediaType>? = null
 )

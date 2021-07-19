@@ -8,5 +8,5 @@ package de.gehring.openapi.model
  */
 data class License(
     val name: String,
-    val url: String?
+    val url: String? = null
 )
