@@ -1,4 +1,5 @@
 package de.gehring.openapi.model
 
-@JvmInline
-value class HttpStatusCode(val value: String)
+import com.fasterxml.jackson.annotation.JsonProperty
+
+data class HttpStatusCode(@JsonProperty val value: String)

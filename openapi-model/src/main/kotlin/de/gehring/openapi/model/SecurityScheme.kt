@@ -1,5 +1,9 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+
 /**
  * Defines a security scheme that can be used by the operations. Supported schemes are HTTP authentication, an API
  * key (either as a header, a cookie parameter or as a query parameter), OAuth2's common flows (implicit, password,
@@ -14,13 +18,17 @@ package de.gehring.openapi.model
  * @param flows  oauth2 	REQUIRED. An object containing configuration information for the flow types supported.
  * @param openIdConnectUrl  openIdConnect 	REQUIRED. OpenId Connect URL to discover OAuth2 configuration values. This MUST be in the form of a URL.
  */
+@JsonDeserialize(
+    using = JsonDeserializer.None::class
+)
 data class SecurityScheme(
     val type: String,
     val description: String? = null,
-    val name: String,
-    val _in: String,
-    val scheme: String,
+    val name: String? = null,
+    @JsonProperty("in")
+    val _in: String? = null,
+    val scheme: String? = null,
     val bearerFormat: String? = null,
-    val flows: OAuthFlows,
-    val openIdConnectUrl: String,
-)
+    val flows: OAuthFlows? = null,
+    val openIdConnectUrl: String? = null,
+) : ReferenceOr<SecurityScheme>

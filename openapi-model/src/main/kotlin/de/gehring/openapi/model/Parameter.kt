@@ -1,5 +1,9 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+
 /**
  * Describes a single operation parameter.
  *
@@ -27,7 +31,9 @@ package de.gehring.openapi.model
  * @param examples  Examples of the parameter's potential value. Each example SHOULD contain a value in the correct format as specified in the parameter encoding. The examples field is mutually exclusive of the example field. Furthermore, if referencing a schema that contains an example, the examples value SHALL override the example provided by the schema.
  * @param content  A map containing the representations for the parameter. The key is the media type and the value describes it. The map MUST only contain one entry.
  */
-
+@JsonDeserialize(
+    using = JsonDeserializer.None::class
+)
 data class Parameter(
     /**
      * The name of the parameter. Parameter names are case sensitive.
@@ -36,6 +42,7 @@ data class Parameter(
      * For all other cases, the name corresponds to the parameter name used by the in property.
      */
     val name: String,
+    @JsonProperty("in")
     val _in: String,
     val description: String? = null,
     val required: Boolean? = null,
@@ -48,4 +55,4 @@ data class Parameter(
     val example: Any? = null,
     val examples: Map<String, ReferenceOr<Example>>? = null,
     val content: Map<String, MediaType>? = null
-)
+) : ReferenceOr<Parameter>

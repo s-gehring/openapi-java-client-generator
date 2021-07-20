@@ -1,5 +1,8 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+
 /**
  * In all cases, the example value is expected to be compatible with the type schema of its associated value.
  * Tooling implementations MAY choose to validate compatibility automatically, and reject the example value(s) if incompatible.
@@ -9,9 +12,12 @@ package de.gehring.openapi.model
  * @param value  Embedded literal example. The value field and externalValue field are mutually exclusive. To represent examples of media types that cannot naturally represented in JSON or YAML, use a string value to contain the example, escaping where necessary.
  * @param externalValue  A URL that points to the literal example. This provides the capability to reference examples that cannot easily be included in JSON or YAML documents. The value field and externalValue field are mutually exclusive.
  */
+@JsonDeserialize(
+    using = JsonDeserializer.None::class
+)
 data class Example(
     val summary: String? = null,
     val description: String? = null,
     val value: Any? = null,
     val externalValue: String? = null,
-)
+) : ReferenceOr<Example>

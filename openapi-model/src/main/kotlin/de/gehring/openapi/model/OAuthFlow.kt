@@ -9,8 +9,8 @@ package de.gehring.openapi.model
  * @param scopes  oauth2 	REQUIRED. The available scopes for the OAuth2 security scheme. A map between the scope name and a short description for it. The map MAY be empty.
  */
 data class OAuthFlow(
-    val authorizationUrl: String,
-    val tokenUrl: String,
+    val authorizationUrl: String?,
+    val tokenUrl: String?,
     val refreshUrl: String? = null,
     val scopes: Map<String, String>,
 )

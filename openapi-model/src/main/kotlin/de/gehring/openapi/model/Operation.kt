@@ -23,7 +23,7 @@ data class Operation(
     val description: String? = null,
     val externalDocs: ExternalDocumentation? = null,
     val operationId: String? = null,
-    val parameters: ReferenceOr<Parameter>? = null,
+    val parameters: List<ReferenceOr<Parameter>>? = null,
     val requestBody: ReferenceOr<RequestBody>? = null,
     val responses: Responses,
     val callbacks: Map<String, ReferenceOr<Callback>>? = null,

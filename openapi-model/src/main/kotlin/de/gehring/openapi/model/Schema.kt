@@ -1,5 +1,8 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+
 /**
  * The Schema Object allows the definition of input and output data types.
  * These types can be objects, but also primitives and arrays.
@@ -60,6 +63,9 @@ package de.gehring.openapi.model
  * @param format - See Data Type Formats for further details. While relying on JSON Schema's defined formats, the OAS offers a few additional predefined formats.
  * @param default - The default value represents what would be assumed by the consumer of the input as the value of the schema if one is not provided. Unlike JSON Schema, the value MUST conform to the defined type for the Schema Object defined at the same level. For example, if type is string, then default can be "foo" but cannot be 1.
  */
+@JsonDeserialize(
+    using = JsonDeserializer.None::class
+)
 data class Schema(
     val nullable: Boolean? = null,
     val discriminator: Discriminator? = null,
@@ -98,7 +104,5 @@ data class Schema(
     val additionalProperties: Boolean? = null,
     val description: String? = null,
     val format: String? = null,
-    val default: Any? = null,
-
-
-    )
+    val default: Any? = null
+) : ReferenceOr<Schema>

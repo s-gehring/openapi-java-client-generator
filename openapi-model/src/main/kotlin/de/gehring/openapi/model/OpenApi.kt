@@ -1,7 +1,5 @@
 package de.gehring.openapi.model
 
-import java.nio.file.Paths
-
 /**
  * This is the root document object of the OpenAPI document.
  *

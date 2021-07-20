@@ -1,5 +1,8 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+
 /**
  * The Link object represents a possible design-time link for a response.
  * The presence of a link does not guarantee the caller's ability to successfully invoke it, rather it provides a known
@@ -22,6 +25,9 @@ package de.gehring.openapi.model
  * @param description  A description of the link. CommonMark syntax MAY be used for rich text representation.
  * @param server  A server object to be used by the target operation.
  */
+@JsonDeserialize(
+    using = JsonDeserializer.None::class
+)
 data class Link(
     val operationRef: String? = null,
     val operationId: String? = null,
@@ -29,4 +35,4 @@ data class Link(
     val requestBody: Any? = null,
     val description: String? = null,
     val server: Server? = null,
-)
+) : ReferenceOr<Link>
