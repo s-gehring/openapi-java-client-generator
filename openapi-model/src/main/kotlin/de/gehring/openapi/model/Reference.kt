@@ -1,5 +1,7 @@
 package de.gehring.openapi.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 /**
  * A simple object to allow referencing other components in the specification, internally and externally.
  *
@@ -9,4 +11,4 @@ package de.gehring.openapi.model
  *
  * @param _ref REQUIRED. The reference string.
  */
-data class Reference<T>(val _ref: String) : ReferenceOr<T>
+data class Reference<T>(@JsonProperty("\$ref") val _ref: String) : ReferenceOr<T>
